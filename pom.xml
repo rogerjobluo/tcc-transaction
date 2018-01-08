@@ -27,7 +27,7 @@
 
         <repo.internal.snapshots.url>http://artifactory.ximalaya.com/artifactory/thirdparty-snapshots-local/
         </repo.internal.snapshots.url>
-        <repo.internal.releases.url>http://artifactory.ximalaya.com/artifactory/thirdparty-releases-local/
+        <repo.internal.releases.url>file:///home/ks/.m2/repository/
         </repo.internal.releases.url>
         <repo.proxy.url>http://repo1.maven.org/maven2</repo.proxy.url>
 
@@ -442,6 +442,17 @@
                 <version>2.7</version>
                 <configuration>
                     <updateReleaseInfo>true</updateReleaseInfo>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.1</version>
+                <configuration>
+                    <port>9090</port>
+                    <uriEncoding>UTF-8</uriEncoding>
+                    <finalName>mgr</finalName>
+                    <server>tomcat7</server>
                 </configuration>
             </plugin>
         </plugins>

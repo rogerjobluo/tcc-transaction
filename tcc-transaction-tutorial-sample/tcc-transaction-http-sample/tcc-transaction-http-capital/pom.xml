@@ -5,7 +5,7 @@
     <parent>
         <artifactId>tcc-transaction-http-sample</artifactId>
         <groupId>org.mengyun</groupId>
-       <version>1.2.4.17</version>
+        <version>1.2.4.17</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -54,5 +54,19 @@
             <artifactId>spring-context</artifactId>
         </dependency>
     </dependencies>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.1</version>
+                <configuration>
+                    <port>9000</port>
+                    <uriEncoding>UTF-8</uriEncoding>
+                    <finalName>mgr</finalName>
+                    <server>tomcat7</server>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
